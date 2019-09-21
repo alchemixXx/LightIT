@@ -1,0 +1,31 @@
+.jumbotron {
+    height: 95vh;
+    margin: 0;
+}
+
+.footer {
+    bottom: 0;
+    position: center;
+    height: 5vh;
+}
+
+.container {
+    top: 100px;
+}
+
+.logo {
+    max-width: 25%;
+    max-height: 25%;
+}
+
+h1, p {
+    font-family: 'Mansalva', cursive;
+}
+
+h1 {
+    font-size: 235%;
+}
+
+#status {
+    font-size: 300%;
+}

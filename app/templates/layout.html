@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roman/integer converter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type=text/javascript>
+			$(function() {
+			  $('a#submit_button').bind('click', function() {
+				$.getJSON('/bg_convert', {
+				  roman: $('input[name="roman"]').val(),
+				  arabic: $('input[name="arabic"]').val(),
+				}, function(data) {
+				    $('#roman').val(data.roman_numb);
+				    $('#arabic').val(data.arabic_numb);
+				    $('#status').text(data.text);
+				});
+				return false;
+			  });
+			});
+		</script>
+</head>
+<body class="text-center">
+
+<div class="jumbotron">
+    <div class="container">
+
+        <h1 class="font-weight-normal">Description of workflow</h1>
+        <p>Please enter exact one number in form below for convertation</p>
+        <form class="form-signin">
+            <img src="/static/images/logo.jpg" class="mb-4 logo rounded-circle" alt="Logo here">
+            <div class="row">
+                <div class="col">
+                    <input id="roman" type="text" class="form-control" placeholder="Enter ROMAN number" name="roman">
+                </div>
+                <a href=# id="submit_button"><button class="btn btn-primary mb-2">Convert</button></a>
+                <div class="col">
+                    <input id="arabic" type="text" class="form-control" placeholder="Enter ARABIC number" name="arabic">
+                </div>
+            </div>
+
+        </form>
+        <small>*If you enter numbers in both fields it will cause the error</small>
+
+        <p id="status"></p>
+
+    </div>
+
+
+</div>
+<div class="footer">Made by Pavel-AlchemixXx Pavlenko</div>
+
+
+
+</body>
+</html>
