@@ -18,3 +18,5 @@ pip install -r requirements
 python convert_app.py
 
 ## go to browser, enter localhost:5000
+
+adn done
